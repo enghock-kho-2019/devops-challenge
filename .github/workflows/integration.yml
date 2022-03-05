@@ -3,7 +3,7 @@ name: Continuous Integration
 on: [push]
 
 jobs:
-  build-&-test:
+  build-N-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
