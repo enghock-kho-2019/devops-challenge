@@ -22,9 +22,9 @@ jobs:
     - run: npm test
     # - run: npm test:e2e
 
-  release:
-    runs-on: ubuntu-latest
-    steps:
+  # release:
+  #   runs-on: ubuntu-latest
+  #   steps:
     - name: Checkout Latest Repo
       uses: actions/checkout@master
 
