@@ -20,7 +20,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - run: npm test:e2e
+    # - run: npm test:e2e
 
   release:
     runs-on: ubuntu-latest
