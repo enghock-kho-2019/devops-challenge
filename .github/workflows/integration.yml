@@ -22,9 +22,9 @@ jobs:
     - run: npm test
     # - run: npm test:e2e
 
-  # release:
-  #   runs-on: ubuntu-latest
-  #   steps:
+  release:
+    runs-on: ubuntu-latest
+    steps:
     - name: Checkout Latest Repo
       uses: actions/checkout@master
 
@@ -40,7 +40,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: ./
-        file: ./Dockerfile
+        context: .
+        file: Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/nestjsapp:latest
