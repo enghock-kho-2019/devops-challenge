@@ -7,6 +7,7 @@ WORKDIR /home/node
 COPY . /home/node
 
 RUN npm ci \
+    && npm clean cache --force \
     && npm run build \
     && npm prune --production
 
