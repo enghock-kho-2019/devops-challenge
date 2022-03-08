@@ -63,3 +63,4 @@ jobs:
         environment_name: Nestjsapp-env
         version_label: nestjsApp-1
         region: us-east-1
+        deployment_package: deploy_package.zip
