@@ -61,5 +61,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: nestjs_app
         environment_name: Nestjsapp-env
-        version_label: nestjsApp-1
+        version_label: nestjsApp-latest
         region: us-east-1
+        deployment_package: deploy_package.zip
