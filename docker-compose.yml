@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  nestjsapp:
+    image: "jude0045/nestjsapp"
+    ports:
+      - "3000:3000"
