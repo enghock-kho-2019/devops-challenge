@@ -45,5 +45,21 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/nestjsapp:latest
 
-  # deploy:
-    
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
+
+    - name: Create ZIP deployment package
+      run: zip -r deploy_package.zip . -x '*.git*'
+
+    - name: Deploy to EB
+      uses: einaregilsson/beanstalk-deploy@v20
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: nestjs_app
+        environment_name: Nestjsapp-env
+        version_label: nestjsApp-1
+        region: us-east-1
